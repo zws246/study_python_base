@@ -17,13 +17,14 @@ import time
 
 
 def all_time(func):
-    print('开始运行')
-    start = time.time()
-    func()
-    end = time.time()
-    print('结束运行')
-    print('总花费时间为:', end-start, '秒')
-    return func
+    def function():
+        print('开始运行')
+        start = time.time()
+        func()
+        end = time.time()
+        print('结束运行')
+        print('总花费时间为:', end-start, '秒')
+    return function
 
 
 @all_time
@@ -33,3 +34,4 @@ def result():
             for c in range(1, 1001):
                 if a + b + c == 1000 and a ** 2 + b ** 2 == c ** 2:
                     print('a:', a, 'b:', b, 'c:', c)
+result()
