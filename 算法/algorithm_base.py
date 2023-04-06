@@ -17,21 +17,61 @@ import time
 
 
 def all_time(func):
-    def function():
+    def function(*args):
         print('开始运行')
         start = time.time()
-        func()
+        func(*args)
         end = time.time()
         print('结束运行')
-        print('总花费时间为:', end-start, '秒')
+        print('总花费时间为:', end - start, '秒')
+
     return function
 
 
 @all_time
-def result():
+def result1(num):
+    """
+    方法一
+    :return:
+    """
+    print('方法', num)
     for a in range(1, 1001):
         for b in range(1, 1001):
             for c in range(1, 1001):
                 if a + b + c == 1000 and a ** 2 + b ** 2 == c ** 2:
                     print('a:', a, 'b:', b, 'c:', c)
-result()
+
+
+@all_time
+def result2(num):
+    """
+    方法二
+    :return:
+    """
+    print('方法', num)
+    for a in range(1, 1001):
+        for b in range(1, 1001):
+            c = 1000 - a - b
+            if a ** 2 + b ** 2 == c ** 2:
+                print('a:', a, 'b:', b, 'c:', c)
+
+
+@all_time
+def result3(num):
+    """
+    方法三
+    :return:
+    """
+    # 已知 a,b,c 均不能大于500
+    print('方法', num)
+    for a in range(1, 501):
+        for b in range(1, 501):
+            c = 1000 - a - b
+            if a ** 2 + b ** 2 == c ** 2:
+                print('a:', a, 'b:', b, 'c:', c)
+
+
+if __name__ == "__main__":
+    result1(1)
+    result1(2)
+    result1(3)
