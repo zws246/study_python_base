@@ -2,11 +2,11 @@ import pymysql
 
 # 创建连接
 con = pymysql.connect(
-    host='192.168.0.11',
-    user='user',
-    password='123456',
+    host='0000',
+    user='***',
+    password='*****',
     port=3306,
-    database='test1',
+    database='***',
     charset='utf8'
 )
 print('连接成功')
