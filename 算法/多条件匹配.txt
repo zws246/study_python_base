@@ -1,0 +1,4 @@
+vlookup实现多条件匹配
+{=vlookup(A&B,if({1,0},A:A&B:B,C:C),2,0)}
+多条件匹配需要用数组的方式进行匹配
+数组的最外层的大括号要用  ctrl+shift+enter 来添加
